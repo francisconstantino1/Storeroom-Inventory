@@ -1,0 +1,262 @@
+/* User dropdown in top bar + notification badges */
+.inv-user-dropdown-wrap {
+    position: relative;
+    margin-left: auto;
+}
+
+.inv-trigger-badges {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    pointer-events: none;
+}
+.inv-trigger-badges .inv-trigger-notification-badge {
+    position: static;
+}
+.inv-trigger-notification-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 6px;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    background: var(--inv-danger);
+    border: 2px solid var(--inv-white, #fff);
+    border-radius: 9999px;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+.inv-trigger-badge-expired {
+    background: #d97706;
+    border-color: var(--inv-white, #fff);
+}
+.inv-user-dropdown-menu a.inv-dropdown-item-with-badge .inv-dropdown-notification-badge-expired {
+    background: #d97706;
+    border-color: transparent;
+}
+
+.inv-user-dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 9999px;
+    background: var(--inv-primary-dark);
+    color: #f9fafb;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.inv-user-dropdown-trigger:hover {
+    background: var(--inv-primary);
+}
+.inv-user-dropdown-trigger .inv-user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--inv-primary);
+    color: var(--inv-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+.inv-user-dropdown-trigger .inv-user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.inv-user-dropdown-trigger .inv-user-chevron {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    opacity: 0.7;
+}
+
+.inv-user-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 8px;
+    width: 288px;
+    background: var(--inv-primary-dark);
+    border: 1px solid #0b356b;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+    z-index: 50;
+    display: none;
+}
+.inv-user-dropdown.open {
+    display: block;
+}
+.inv-user-dropdown-header {
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: transparent;
+    border-radius: 8px 8px 0 0;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+.inv-user-dropdown-header .inv-user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--inv-primary);
+    color: var(--inv-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+.inv-user-dropdown-header .inv-user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.inv-user-dropdown-header .inv-user-info {
+    flex: 1;
+    min-width: 0;
+}
+.inv-user-dropdown-header .inv-user-name {
+    font-weight: 600;
+    color: #f9fafb;
+    font-size: 14px;
+}
+.inv-user-dropdown-header .inv-user-email {
+    font-size: 12px;
+    color: #e5e7eb;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.inv-user-dropdown-badge {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #f9fafb;
+    flex-shrink: 0;
+}
+.inv-user-dropdown-menu {
+    list-style: none;
+    margin: 0;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+}
+.inv-user-dropdown-menu li {
+    margin: 0;
+}
+.inv-user-dropdown-menu a,
+.inv-user-dropdown-menu button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 12px;
+    border: none;
+    background: transparent;
+    color: #e5e7eb;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 0;
+    transition: background 0.2s;
+    text-align: left;
+}
+.inv-user-dropdown-menu a:hover,
+.inv-user-dropdown-menu button:hover {
+    background: rgba(15, 23, 42, 0.4);
+}
+.inv-user-dropdown-menu .inv-user-dropdown-signout {
+    color: var(--inv-danger);
+}
+.inv-user-dropdown-menu .inv-user-dropdown-signout:hover {
+    background: rgba(231, 76, 60, 0.08);
+}
+.inv-user-dropdown-menu .inv-user-dropdown-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    opacity: 0.8;
+}
+.inv-user-dropdown-border {
+    border-top: 1px solid #e5e7eb;
+    margin-top: 4px;
+    padding-top: 4px;
+}
+
+.inv-user-dropdown-menu a.inv-dropdown-item-with-badge {
+    position: relative;
+}
+.inv-user-dropdown-menu a.inv-dropdown-item-with-badge .inv-dropdown-notification-badge {
+    position: static;
+    margin-left: auto;
+    flex-shrink: 0;
+    border-color: transparent;
+}
+.inv-dropdown-notification-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 6px;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    background: var(--inv-danger);
+    border: 2px solid var(--inv-bg, #fff);
+    border-radius: 9999px;
+    box-sizing: border-box;
+}
+.inv-dropdown-item-request-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--inv-danger);
+}
+.inv-dropdown-item-with-badge .inv-dropdown-item-request-indicator .inv-dropdown-notification-badge {
+    position: static;
+    border-color: transparent;
+}
+.inv-dropdown-item-with-badge .inv-dropdown-item-request-indicator {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    margin-left: 0;
+}
+.inv-dropdown-item-with-badge .inv-dropdown-item-request-indicator .inv-dropdown-notification-badge {
+    flex-shrink: 0;
+}
+.inv-dropdown-item-request-label {
+    white-space: nowrap;
+    opacity: 0.95;
+}

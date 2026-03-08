@@ -1,0 +1,181 @@
+/**
+ * Store Room — Login page (source copy)
+ * The login view loads: public/css/login.css
+ * Keep this file in sync with public/css/login.css when editing.
+ */
+
+/* ---------------------------------------------------------------------------
+   Variables
+----------------------------------------------------------------------------- */
+:root {
+    --login-header-bg: #0d47a1;
+    --login-header-bg-hover: #0a3d91;
+    --login-header-bg-active: #08306b;
+    --login-focus-ring: rgba(13, 71, 161, 0.25);
+    --login-input-border: #d4d4d8;
+    --login-text: #27272a;
+    --login-text-muted: #52525b;
+    --login-bg: #f4f4f5;
+    --login-card-bg: #ffffff;
+    --login-card-border: #e4e4e7;
+}
+
+/* ---------------------------------------------------------------------------
+   Base
+----------------------------------------------------------------------------- */
+.login-page {
+    font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+    background-color: var(--login-bg);
+}
+
+.login-page input:focus {
+    outline: none;
+}
+
+/* ---------------------------------------------------------------------------
+   Header
+----------------------------------------------------------------------------- */
+.login-header {
+    background-color: var(--login-header-bg);
+    color: white;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.login-header-icon {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 0.5rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Card
+----------------------------------------------------------------------------- */
+.login-card {
+    background-color: var(--login-card-bg);
+    border: 1px solid var(--login-card-border);
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.login-card-header {
+    background-color: #fafafa;
+    border-bottom: 1px solid var(--login-card-border);
+}
+
+/* ---------------------------------------------------------------------------
+   Input groups (with icon)
+----------------------------------------------------------------------------- */
+.login-input-wrap {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--login-input-border);
+    border-radius: 0.5rem;
+    background-color: white;
+    transition: box-shadow 0.15s ease;
+}
+
+.login-input-wrap:focus-within {
+    box-shadow: 0 0 0 2px var(--login-focus-ring);
+}
+
+.login-input-wrap:focus-within .login-input-icon {
+    color: var(--login-header-bg);
+}
+
+.login-input-icon {
+    color: #a1a1aa;
+    padding-left: 0.875rem;
+    padding-right: 0.5rem;
+    flex-shrink: 0;
+}
+
+.login-input-wrap input {
+    flex: 1;
+    min-width: 0;
+    padding: 0.75rem 1rem;
+    border: none;
+    background: transparent;
+    font-size: 0.875rem;
+    color: var(--login-text);
+}
+
+.login-input-wrap input::placeholder {
+    color: #a1a1aa;
+}
+
+/* ---------------------------------------------------------------------------
+   Button
+----------------------------------------------------------------------------- */
+.login-btn {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: white;
+    background-color: var(--login-header-bg);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.login-btn:hover {
+    background-color: var(--login-header-bg-hover);
+}
+
+.login-btn:active {
+    background-color: var(--login-header-bg-active);
+}
+
+.login-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px white, 0 0 0 4px var(--login-header-bg);
+}
+
+/* ---------------------------------------------------------------------------
+   Error message
+----------------------------------------------------------------------------- */
+.login-error {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.875rem 1rem;
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    color: #b91c1c;
+}
+
+.login-error-icon {
+    flex-shrink: 0;
+    color: #dc2626;
+}
+
+/* ---------------------------------------------------------------------------
+   Footer
+----------------------------------------------------------------------------- */
+.login-footer {
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--login-text-muted);
+    border-top: 1px solid var(--login-card-border);
+    background-color: var(--login-card-bg);
+}
+
+.login-footer a {
+    color: var(--login-header-bg);
+    text-decoration: none;
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
+}
+
+/* ---------------------------------------------------------------------------
+   reCAPTCHA
+----------------------------------------------------------------------------- */
+.g-recaptcha {
+    display: flex;
+    justify-content: center;
+}

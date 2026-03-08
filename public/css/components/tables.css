@@ -1,0 +1,154 @@
+/* Shared tables, action buttons, badges */
+.logs-table-wrap {
+    background: var(--inv-white);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    overflow-x: auto;
+}
+
+.logs-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.logs-table th,
+.logs-table td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+.logs-table th {
+    background: #f9fafb;
+    font-weight: 600;
+    color: #374151;
+}
+.logs-table tr:hover {
+    background: #f9fafb;
+}
+
+.inv-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.inv-table th,
+.inv-table td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.inv-table th {
+    background: #f5f5f5;
+    font-weight: 600;
+    color: #374151;
+}
+.inv-table tbody tr:hover {
+    background: #f9fafb;
+}
+th.inv-col-updated,
+td.inv-col-updated {
+    display: none;
+}
+
+.inv-actions {
+    display: flex;
+    gap: 8px;
+}
+.inv-action-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: opacity 0.2s;
+}
+.inv-action-btn.view {
+    background: var(--inv-info);
+}
+.inv-action-btn.edit {
+    background: #4a90e2;
+}
+.inv-action-btn.delete {
+    background: var(--inv-danger);
+}
+.inv-action-btn:hover {
+    opacity: 0.9;
+}
+.inv-action-btn.request {
+    background: #facc15;
+    color: #000000;
+}
+.inv-action-btn.request i {
+    color: #000000;
+}
+a.inv-action-btn {
+    text-decoration: none;
+}
+.inv-action-btn.barcode {
+    background: #6b7280;
+}
+.inv-action-btn.barcode:hover {
+    color: #fff;
+}
+
+.inv-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    max-width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+.inv-badge.in-stock {
+    background: var(--inv-success);
+    color: #fff;
+}
+.inv-badge.out {
+    background: var(--inv-primary-dark);
+    color: #fff;
+    border-radius: 999px;
+    letter-spacing: 0.03em;
+}
+.inv-badge.brand {
+    background: #9ca3af;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.inv-status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    min-width: 80px;
+}
+.inv-status-badge.pending {
+    background: #e5e7eb;
+    color: #374151;
+}
+.inv-status-badge.approved {
+    background: var(--inv-success);
+    color: #ffffff;
+}
+.inv-status-badge.rejected {
+    background: #fca5a5;
+    color: #7f1d1d;
+}
+
+.inv-view-field {
+    padding: 10px 14px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    min-height: 20px;
+    color: #374151;
+}

@@ -1,0 +1,174 @@
+/* Modals and form controls */
+.inv-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.inv-modal.active {
+    display: flex;
+}
+
+.inv-modal-content {
+    background: var(--inv-white);
+    border-radius: 8px;
+    padding: 28px;
+    width: 100%;
+    max-width: 520px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.inv-modal-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+.inv-modal-header .inv-modal-logo {
+    display: block;
+    margin: 0 auto 14px;
+    max-height: 48px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+}
+.inv-modal-header h3 {
+    color: var(--inv-primary);
+    margin-bottom: 4px;
+}
+.inv-modal-header h4 {
+    color: var(--inv-mustard);
+    font-size: 15px;
+    margin-top: 8px;
+}
+
+.inv-form-group {
+    margin-bottom: 18px;
+}
+.inv-form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #374151;
+}
+.inv-form-control {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+.inv-form-control:focus {
+    outline: none;
+    border-color: var(--inv-primary);
+}
+.inv-form-control[readonly] {
+    background: #f3f4f6;
+}
+.inv-form-hint {
+    font-size: 12px;
+    color: #6b7280;
+    margin-top: 4px;
+}
+
+.inv-modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+}
+.inv-btn-exit {
+    background: #6b7280 !important;
+}
+.inv-btn-exit:hover {
+    background: #4b5563 !important;
+}
+
+/* Notification modal (e.g. out-of-stock) — centered message + OK only */
+.inv-modal-notification-content {
+    position: relative;
+    max-width: 28rem;
+    text-align: center;
+    padding: 1.5rem 1.5rem 1.75rem;
+}
+.inv-modal-notification-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #6b7280;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.inv-modal-notification-close:hover {
+    background: #e5e7eb;
+    color: #374151;
+}
+.inv-modal-notification-close svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+.inv-modal-notification-body {
+    padding-top: 0.25rem;
+}
+.inv-modal-notification-icon {
+    margin: 0 auto 1rem;
+    display: block;
+    color: #9ca3af;
+    width: 3rem;
+    height: 3rem;
+}
+.inv-modal-notification-title {
+    margin: 0 0 1rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #374151;
+}
+.inv-modal-notification-message {
+    margin: 0 0 1.5rem;
+    font-size: 0.9375rem;
+    color: #4b5563;
+    line-height: 1.5;
+}
+.inv-modal-notification-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+}
+.inv-modal-notification-actions .inv-btn-primary {
+    background: var(--inv-primary, #1d4ed8);
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+.inv-modal-notification-actions .inv-btn-primary:hover {
+    filter: brightness(1.05);
+}
+
+/* Inventory item image frame in view modals */
+.inv-item-image {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 8px;
+    object-fit: contain;
+    border: 2px solid #e5e7eb;
+    background: #f9fafb;
+    padding: 6px;
+    box-shadow: 0 1px 4px rgba(15, 23, 42, 0.08);
+}

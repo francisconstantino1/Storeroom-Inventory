@@ -1,0 +1,10 @@
+/* App — shared layer: variables, base, components */
+@import url('variables.css');
+@import url('base.css');
+@import url('components/dropdown.css');
+@import url('components/tables.css');
+@import url('components/modals.css');
+@import url('components/buttons.css');
+@import url('components/alerts.css');
+@import url('components/tabs.css');
+@import url('components/filters.css');

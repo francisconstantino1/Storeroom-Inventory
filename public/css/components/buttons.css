@@ -1,0 +1,27 @@
+/* Primary and utility buttons */
+.inv-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--inv-primary);
+    color: var(--inv-white);
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+.inv-btn:hover {
+    background: var(--inv-primary-dark);
+}
+
+.inv-btn-mustard {
+    background: var(--inv-mustard) !important;
+    color: #1e293b !important;
+}
+.inv-btn-mustard:hover {
+    background: var(--inv-mustard-light) !important;
+}

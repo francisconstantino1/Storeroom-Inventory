@@ -1,0 +1,372 @@
+/**
+ * Store Room — Login page
+ * Dark blue button and shadow.
+ */
+
+/* ---------------------------------------------------------------------------
+   Variables
+----------------------------------------------------------------------------- */
+:root {
+    --login-primary: #3a3a3a;
+    --login-accent: #0d47a1;
+    --login-accent-hover: #0a3d91;
+    --login-light-gray: #d0d0d0;
+    --login-white: #ffffff;
+    --login-focus-shadow: rgba(13, 71, 161, 0.25);
+    --login-shadow: rgba(13, 71, 161, 0.35);
+    --login-error-text: #c62828;
+    --login-error-bg: #ffebee;
+}
+
+/* ---------------------------------------------------------------------------
+   Page (blurred photo background, no top bar)
+----------------------------------------------------------------------------- */
+.login-page {
+    font-family: "Arial Narrow", Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: var(--login-primary);
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.login-page input:focus {
+    outline: none;
+}
+
+/* Blurred background photo layer */
+.login-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(8px);
+    transform: scale(1.05);
+}
+
+.login-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+/* ---------------------------------------------------------------------------
+   Main (sits above blurred background)
+----------------------------------------------------------------------------- */
+.login-main {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+@media (min-width: 640px) {
+    .login-main {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+}
+
+.login-main-inner {
+    width: 100%;
+    max-width: 450px;
+}
+
+.login-notice {
+    text-align: center;
+    color: #fff;
+    font-size: 1.125rem;
+    margin-top: 1.5rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Card (church login-form-container style)
+----------------------------------------------------------------------------- */
+.login-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 10px 40px var(--login-shadow);
+    overflow: hidden;
+}
+
+.login-card-header {
+    padding: 30px 30px 20px;
+    text-align: center;
+}
+
+.login-card-logo {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    margin: 0 auto 1rem;
+    object-fit: contain;
+}
+
+.login-card-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--login-primary);
+    margin-bottom: 0.5rem;
+}
+
+.login-card-desc {
+    font-size: 0.875rem;
+    color: var(--login-primary);
+    opacity: 0.8;
+}
+
+/* ---------------------------------------------------------------------------
+   Card body
+----------------------------------------------------------------------------- */
+.login-card-body {
+    padding: 0 30px 30px;
+}
+
+/* ---------------------------------------------------------------------------
+   Form
+----------------------------------------------------------------------------- */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.login-field {
+    margin-bottom: 0;
+}
+
+/* Center reCAPTCHA checkbox */
+.login-field .g-recaptcha {
+    display: flex;
+    justify-content: center;
+}
+
+.login-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    color: var(--login-primary);
+}
+
+/* ---------------------------------------------------------------------------
+   Input groups (icon on RIGHT like church form)
+----------------------------------------------------------------------------- */
+.login-input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.login-input-wrap input {
+    width: 100%;
+    padding: 12px 40px 12px 15px;
+    border: 1px solid var(--login-light-gray);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--login-primary);
+    background: var(--login-white);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.login-input-wrap input:focus {
+    border-color: var(--login-accent);
+    box-shadow: 0 0 0 3px var(--login-focus-shadow);
+}
+
+.login-input-wrap input::placeholder {
+    color: #999;
+}
+
+.login-input-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--login-primary);
+    pointer-events: none;
+}
+
+.login-input-icon svg {
+    width: 1.125rem;
+    height: 1.125rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Options (remember + forgot)
+----------------------------------------------------------------------------- */
+.login-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+    .login-options {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.login-remember {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    cursor: pointer;
+}
+
+.login-remember input {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--login-light-gray);
+    accent-color: var(--login-accent);
+}
+
+.login-remember input:focus {
+    box-shadow: 0 0 0 2px var(--login-focus-shadow);
+}
+
+.login-remember span {
+    font-size: 0.875rem;
+    color: var(--login-primary);
+}
+
+.login-forgot {
+    font-size: 0.875rem;
+    color: var(--login-accent);
+    text-decoration: none;
+}
+
+.login-forgot:hover {
+    color: var(--login-accent-hover);
+    text-decoration: underline;
+}
+
+@media (min-width: 640px) {
+    .login-options .login-forgot { order: 2; }
+    .login-options .login-remember { order: 1; }
+}
+
+@media (max-width: 639px) {
+    .login-options .login-forgot { order: 1; }
+    .login-options .login-remember { order: 2; }
+}
+
+/* ---------------------------------------------------------------------------
+   Button (dark blue + dark blue shadow)
+----------------------------------------------------------------------------- */
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--login-white);
+    background-color: var(--login-accent);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px var(--login-shadow);
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+.login-btn:hover {
+    background-color: var(--login-accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--login-shadow);
+}
+
+.login-btn:active {
+    transform: scale(0.98);
+}
+
+.login-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--login-focus-shadow);
+}
+
+/* ---------------------------------------------------------------------------
+   Error (church .error style)
+----------------------------------------------------------------------------- */
+.login-error {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    color: var(--login-error-text);
+    background-color: var(--login-error-bg);
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 0.875rem;
+}
+
+.login-error-icon {
+    flex-shrink: 0;
+    color: var(--login-error-text);
+}
+
+.login-error-icon svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.login-error div {
+    flex: 1;
+}
+
+/* ---------------------------------------------------------------------------
+   Help text
+----------------------------------------------------------------------------- */
+.login-help {
+    font-size: 0.75rem;
+    color: var(--login-primary);
+    opacity: 0.7;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--login-light-gray);
+}
+
+/* ---------------------------------------------------------------------------
+   Footer (above blurred background)
+----------------------------------------------------------------------------- */
+.login-footer {
+    position: relative;
+    z-index: 1;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--login-white);
+    opacity: 0.9;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.login-footer p {
+    margin: 0;
+}
+
+.login-footer p + p {
+    margin-top: 0.25rem;
+}
+
+.login-footer a {
+    color: rgba(255, 255, 255, 0.95);
+    text-decoration: none;
+}
+
+.login-footer a:hover {
+    color: var(--login-white);
+    text-decoration: underline;
+}

@@ -1,0 +1,137 @@
+/* Inventory page — layout, top bar, nav, summary cards, expiration highlight */
+.inv-content {
+    padding: 16px 0;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.inv-top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--inv-white);
+    padding: 24px 32px;
+    color: #374151;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 24px;
+    border-radius: 0;
+    min-height: 96px;
+    position: relative;
+}
+
+.inv-top-bar .inv-logo {
+    height: 48px;
+    width: auto;
+    max-width: 220px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.inv-top-bar-title {
+    flex: 1;
+    margin-left: 24px;
+    min-width: 0;
+}
+
+.inv-top-bar-heading {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--inv-primary);
+}
+
+.inv-top-bar-welcome {
+    margin: 2px 0 0;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #6b7280;
+}
+
+.inv-top-bar .inv-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.inv-top-bar .inv-nav a,
+.inv-top-bar .inv-nav button {
+    color: #374151;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background 0.2s;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    background: transparent;
+}
+
+.inv-top-bar .inv-nav a:hover,
+.inv-top-bar .inv-nav .inv-btn-mustard:hover {
+    background: #f3f4f6;
+}
+
+.inv-page-wrap {
+    padding: 20px;
+}
+
+.inv-summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.inv-card {
+    background: var(--inv-white);
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.inv-card h3 {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 6px;
+}
+
+.inv-card p {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--inv-primary);
+}
+
+.inv-card .inv-card-row {
+    font-size: 14px;
+    margin-top: 8px;
+    color: #4b5563;
+}
+
+.inv-expiration-date {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    background: var(--inv-danger);
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .inv-top-bar {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    .inv-summary-cards {
+        grid-template-columns: 1fr;
+    }
+    .inv-tabs {
+        flex-wrap: wrap;
+    }
+    .inv-tabs a {
+        min-width: 50%;
+    }
+}

@@ -1,0 +1,12 @@
+/* Shared theme variables — dark blue & mustard */
+:root {
+    --inv-primary: #0d47a1;
+    --inv-primary-dark: #0a3a82;
+    --inv-mustard: #d4a017;
+    --inv-mustard-light: #e6b82e;
+    --inv-white: #ffffff;
+    --inv-bg: #f5f5f5;
+    --inv-success: #2ecc71;
+    --inv-danger: #e74c3c;
+    --inv-info: #2196f3;
+}
